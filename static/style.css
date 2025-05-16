@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #cadadc;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #1b518f;
+    color: #ece9f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    margin-top: 20px;
+}

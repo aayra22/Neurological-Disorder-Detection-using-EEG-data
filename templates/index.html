@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurological Disorder Detection</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #9b59b6, #2ca4f3);
+            color: white;
+            
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+           
+            justify-content: space-between;
+        }
+        .text-section {
+            flex: 1;
+            text-align: left;
+            margin-left: 50px;
+        }
+        h1 {
+            font-size: 5rem;
+            line-height: 41px;
+         margin-left:-17rem;
+-webkit-text-stroke: 2px white;
+
+            
+        }
+        .content-section {
+            flex: 1;
+            text-align: right;
+            margin-right:-150px;
+           
+           
+        }
+        p {
+            font-size:1.8rem;
+            margin-bottom: 20px;
+            font-family: fangsong;
+          color:  #dcb0b0;
+            font-weight:5 rem;
+            text-align: left;
+          
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: white;
+            color: #2575fc;
+            font-weight: bold;
+            border: 2px solid #2575fc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background: #2575fc;
+            color: white;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+        }
+        .bottom-left-image {
+            position: fixed;
+            bottom: 40px;
+            left: 10px;
+            width: 35%; /* Adjust size as needed */
+            height: 43%;
+            margin-left: 50px;
+            border: 5px solid white;
+    border-radius: 15px;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-section">
+         
+    <h1>Neurological</h1>
+    <h1> Disorder Detection</h1>
+        </div>
+        <img src="static/Pi7_Tool_brain.jpg" alt="Bottom Left Image" class="bottom-left-image">
+
+        <div class="content-section">
+            <p>Detecting neurological disorders through EEG data analysis is a revolutionary approach in modern healthcare. By leveraging advanced signal processing , EEG readings can reveal hidden patterns linked to epilepsy, Alzheimer’s, Parkinson’s, and other brain disorders. Machine learning models analyze brainwave abnormalities, enabling early diagnosis and precise treatment planning. This non-invasive technique enhances accuracy, reducing the need for costly and complex procedures. Real-time monitoring of brain activity empowers neurologists with valuable insights for personalized care.</p>
+            <button class="btn" id="start-btn">Get Started</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("start-btn").addEventListener("click", function() {
+            window.location.href = "/upload";  // Redirect to upload page
+        });
+    </script>
+</body>
+</html>

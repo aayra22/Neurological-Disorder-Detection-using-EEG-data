@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV File</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #9b59b6, #2ca4f3);
+            color: white;
+            text-align: center;
+        }
+        .upload-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            color: black;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .drop-zone {
+            border: 2px dashed #6a11cb;
+            padding: 30px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .drop-zone:hover {
+            background: #e9e9e9;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background: white;
+            color: #2575fc;
+            font-weight: bold;
+            border: 2px solid #2575fc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+            .btn:hover {
+                background: #2575fc;
+                color: white;
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload CSV File</h2>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <div class="drop-zone" id="drop-zone">Drag & Drop your file here or click to select</div>
+            <input type="file" id="file-upload" accept=".csv" name="file" class="hidden">
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const dropZone = document.getElementById("drop-zone");
+        const fileInput = document.getElementById("file-upload");
+
+        dropZone.addEventListener("click", () => fileInput.click());
+
+        dropZone.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropZone.style.background = "#e0e0e0";
+        });
+
+        dropZone.addEventListener("dragleave", () => {
+            dropZone.style.background = "#f9f9f9";
+        });
+
+        dropZone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropZone.style.background = "#f9f9f9";
+            fileInput.files = e.dataTransfer.files;
+        });
+    </script>
+</body>
+</html>

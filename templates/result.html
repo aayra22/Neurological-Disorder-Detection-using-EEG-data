@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom right, #9b59b6, #2ca4f3);
+        color: white;
+        
+        font-family: Arial, sans-serif;
+    }
+</style>
+<body>
+   
+    <div class="container" style="height:auto">
+        <h1>Results</h1>
+        <p>Below is the graph based on the uploaded data:</p>
+        <img src="{{ image_path }}" alt="Prediction Graph" style="width: 80%; height: auto;">
+        <br>
+        <p><strong>Probability of Neurological Disorder:</strong> {{ accuracy|round(2) }}%</p>
+        <p><br>The graph represents the model's prediction values.</br> A higher value indicates a higher probability of neurological disorder detection.</p>
+        <button onclick="window.location.href='/'">Go Home</button>
+    </div>
+    
+</body>
+</html> 
+.
